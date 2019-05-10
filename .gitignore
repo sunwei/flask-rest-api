@@ -102,3 +102,13 @@ venv.bak/
 
 # mypy
 .mypy_cache/
+
+#vscode
+.vscode/
+
+#cpython
+/__pycache__
+
+#idea
+.idea/
+
