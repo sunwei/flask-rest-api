@@ -1,8 +1,8 @@
 import logging
+from http import HTTPStatus
 
+from flask import current_app
 from flask_restplus import Api
-from visitor_experience import settings
-
 
 log = logging.getLogger(__name__)
 
@@ -16,5 +16,5 @@ def default_error_handler(e):
     message = 'An unhandled exception occurred.'
     log.exception(message)
 
-    if not settings.FLASK_DEBUG:
-        return {'message': message}, 500
+    if not current_app.config['DEBUG']:
+        return {'message': message}, HTTPStatus.SERVICE_UNAVAILABLE
