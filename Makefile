@@ -10,3 +10,6 @@ install:
 run:
 	source venv/bin/activate && \
 	python visitor_experience/app.py
+
+clean:
+	rm -rf venv
